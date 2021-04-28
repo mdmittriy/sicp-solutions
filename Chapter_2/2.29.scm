@@ -20,7 +20,6 @@
 (define (branch-length branch) (car branch))
 (define (branch-structure branch) (cadr branch))
 
-(define a (make-mobile (make-mobile (make-branch 1 3) (make-branch 1.5 2)) (make-mobile (make-branch 3 1) (make-branch 1 3)))) 
 
 ;b.  Using your selectors, define a procedure total-weight that returns the total weight of a mobile.
 
@@ -36,18 +35,22 @@
 
 (define (balanced? mobile)
   (if (number? (branch-structure mobile)) #t
-      (and (= (total-weight (left-branch mobile)) (total-weight (right-branch mobile)))
+      (and (= (* (total-weight (left-branch mobile)) (branch-length (left-branch mobile))) 
+              (* (total-weight (right-branch mobile)) (branch-length (right-branch mobile))))
            (balanced? (left-branch mobile))
-           (balanced? (right-branch mobile)))))
+           (balanced? (right-branch mobile))
+           )))
 
-;Not a full answer for c
+
+(define aa (make-mobile (make-branch 1 1) (make-branch 1 1)))
+(display (balanced? aa))
 
 ;d.  Suppose we change the representation of mobiles so that the constructors are
 
-(define (make-mobile left right)
-    (cons left right))
-(define (make-branch length structure)
-    (cons length structure))
+;(define (make-mobile left right)
+;    (cons left right))
+;(define (make-branch length structure)
+;    (cons length structure))
 
 ;How much do you need to change your programs to convert to the new representation? 
 
@@ -55,8 +58,8 @@
 ;as car or cdr. Namely I would have to change cadr to cdr in two of my functions.
 
 
-(define (left-branch mobile) (car mobile))
-(define (right-branch mobile) (cdr mobile))
-
-(define (branch-length branch) (car branch))
-(define (branch-structure branch) (cdr branch))
+;(define (left-branch mobile) (car mobile))
+;(define (right-branch mobile) (cdr mobile))
+;
+;(define (branch-length branch) (car branch))
+;(define (branch-structure branch) (cdr branch))
