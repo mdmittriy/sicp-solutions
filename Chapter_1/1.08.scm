@@ -27,9 +27,7 @@
 (define appr-eq (lambda (x y) (< (abs (- x y)) tolerance) ))
                       
 ;tests
-(newline)
 (display (and 
-(appr-eq (third-root-improved 8.0) 2)
-(appr-eq (third-root-improved 27.0) 3)
-(appr-eq (third-root-improved 64.0) 4)))
-(newline)
+         (appr-eq (third-root-improved 8.0) 2)
+         (appr-eq (third-root-improved 27.0) 3)
+         (appr-eq (third-root-improved 64.0) 4)))

@@ -32,7 +32,5 @@
     (prime? 2821)
     (prime? 6601)
     (prime? 561)))
-;#t
-
 ;Wheras it should be false since all of these numbers are not prime.
 

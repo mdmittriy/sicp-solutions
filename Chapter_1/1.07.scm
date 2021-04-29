@@ -21,20 +21,18 @@
   (iter-sq-root x 1)
 ))
 
+(newline)
 (display (sq-root 0.0000001))
 (newline)
 (display (sqrt 0.0000001))
+(newline)
 
 ;When applying our implemented function sq-root to very small numbers the answer heavily depends on the value of tolerance that we provide.  
 
 (newline)
+(display (sq-root 1000000.0))
 (newline)
-(newline)
-;(display (sq-root 1000000.0))
-(newline)
-(newline)
-;(display (sqrt 1000000.0))
-(newline)
+(display (sqrt 1000000.0))
 (newline)
 
 ;Whereas for large numbers due to the way arithmetic is implemented in the computer the value is never lower than provided tolerance and

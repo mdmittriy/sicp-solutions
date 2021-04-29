@@ -9,16 +9,9 @@
       (else (smallest-divisor-iter x (+ n 1)))) ))
     (smallest-divisor-iter x 2) ))
 
-(newline)
-(display (smallest-divisor 199))
-;199
-(newline)
-(display (smallest-divisor 1999))
-;1999
-(newline)
-(display (smallest-divisor 19999))
-;7
-(newline)
-(display (smallest-divisor 199999))
-;199999
-(newline)
+;tests
+(display (and
+            (= (smallest-divisor 199) 199)
+            (= (smallest-divisor 1999) 1999)
+            (= (smallest-divisor 19999) 7)
+            (= (smallest-divisor 199999) 199999)))
